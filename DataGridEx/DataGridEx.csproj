@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0AEDE0E3-AFBC-4E9B-ABB2-A30EC1DAC6E8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataGridEx</RootNamespace>
+    <AssemblyName>DataGridEx</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoFiller.cs" />
+    <Compile Include="BindingUtilities.cs" />
+    <Compile Include="ColorToBrushConverter.cs" />
+    <Compile Include="DataAnnotations\AutoUpdateTextAttribute.cs" />
+    <Compile Include="DataAnnotations\BasePathPropertyAttribute.cs" />
+    <Compile Include="DataAnnotations\BrowsableAttribute.cs" />
+    <Compile Include="DataAnnotations\CategoryAttribute.cs" />
+    <Compile Include="DataAnnotations\CheckableItemsAttribute.cs" />
+    <Compile Include="DataAnnotations\Column.cs" />
+    <Compile Include="DataAnnotations\ColumnsPropertyAttribute.cs" />
+    <Compile Include="DataAnnotations\CommentAttribute.cs" />
+    <Compile Include="DataAnnotations\ContentAttribute.cs" />
+    <Compile Include="DataAnnotations\ConverterAttribute.cs" />
+    <Compile Include="DataAnnotations\DefaultExtensionPropertyAttribute.cs" />
+    <Compile Include="DataAnnotations\DescriptionAttribute.cs" />
+    <Compile Include="DataAnnotations\DirectoryPathAttribute.cs" />
+    <Compile Include="DataAnnotations\DisplayMemberPathAttribute.cs" />
+    <Compile Include="DataAnnotations\DisplayNameAttribute.cs" />
+    <Compile Include="DataAnnotations\EasyInsertAttribute.cs" />
+    <Compile Include="DataAnnotations\EditableAttribute.cs" />
+    <Compile Include="DataAnnotations\EnableByAttribute.cs" />
+    <Compile Include="DataAnnotations\EnableByRadioButtonAttribute.cs" />
+    <Compile Include="DataAnnotations\FillTabAttribute.cs" />
+    <Compile Include="DataAnnotations\FilterPropertyAttribute.cs" />
+    <Compile Include="DataAnnotations\FontAttribute.cs" />
+    <Compile Include="DataAnnotations\FontFamilySelectorAttribute.cs" />
+    <Compile Include="DataAnnotations\FontPreviewAttribute.cs" />
+    <Compile Include="DataAnnotations\FormatStringAttribute.cs" />
+    <Compile Include="DataAnnotations\HeaderPlacement.cs" />
+    <Compile Include="DataAnnotations\HeaderPlacementAttribute.cs" />
+    <Compile Include="DataAnnotations\HeightAttribute.cs" />
+    <Compile Include="DataAnnotations\HorizontalAlignment.cs" />
+    <Compile Include="DataAnnotations\HorizontalAlignmentAttribute.cs" />
+    <Compile Include="DataAnnotations\IndentationLevelAttribute.cs" />
+    <Compile Include="DataAnnotations\InputDirection.cs" />
+    <Compile Include="DataAnnotations\InputDirectionAttribute.cs" />
+    <Compile Include="DataAnnotations\InputFilePathAttribute.cs" />
+    <Compile Include="DataAnnotations\ItemHeaderPropertyAttribute.cs" />
+    <Compile Include="DataAnnotations\ItemsSourcePropertyAttribute.cs" />
+    <Compile Include="DataAnnotations\ListAttribute.cs" />
+    <Compile Include="DataAnnotations\ListItemItemsSourcePropertyAttribute.cs" />
+    <Compile Include="DataAnnotations\OptionalAttribute.cs" />
+    <Compile Include="DataAnnotations\OutputFilePathAttribute.cs" />
+    <Compile Include="DataAnnotations\ReadOnlyAttribute.cs" />
+    <Compile Include="DataAnnotations\ResettableAttribute.cs" />
+    <Compile Include="DataAnnotations\SelectedValuePathAttribute.cs" />
+    <Compile Include="DataAnnotations\SelectorStyle.cs" />
+    <Compile Include="DataAnnotations\SelectorStyleAttribute.cs" />
+    <Compile Include="DataAnnotations\SlidableAttribute.cs" />
+    <Compile Include="DataAnnotations\SortIndexAttribute.cs" />
+    <Compile Include="DataAnnotations\SpinnableAttribute.cs" />
+    <Compile Include="DataAnnotations\VisibleByAttribute.cs" />
+    <Compile Include="DataAnnotations\WidePropertyAttribute.cs" />
+    <Compile Include="DataAnnotations\WidthAttribute.cs" />
+    <Compile Include="ISortDescriptionComparer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReflectionMath.cs" />
+    <Compile Include="TypeHelper.cs" />
+    <Compile Include="ValueToBooleanConverter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataGridExt\DataGridExt.csproj">
+      <Project>{76F6BF47-065C-44A6-98A9-9D866A75DA03}</Project>
+      <Name>DataGridExt</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

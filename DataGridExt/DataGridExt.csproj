@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{76F6BF47-065C-44A6-98A9-9D866A75DA03}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <RootNamespace>DataGridExt</RootNamespace>
+    <AssemblyName>DataGridExt</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoFiller.cs" />
+    <Compile Include="BindingUtilities.cs" />
+    <Compile Include="ColorToBrushConverter.cs" />
+    <Compile Include="ISortDescriptionComparer.cs" />
+    <Compile Include="ReflectionMath.cs" />
+    <Compile Include="TypeHelper.cs" />
+    <Compile Include="ValueToBooleanConverter.cs" />
+    <Page Include="DataGrid\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataAnnotations\AutoUpdateTextAttribute.cs" />
+    <Compile Include="DataAnnotations\BasePathPropertyAttribute.cs" />
+    <Compile Include="DataAnnotations\BrowsableAttribute.cs" />
+    <Compile Include="DataAnnotations\CategoryAttribute.cs" />
+    <Compile Include="DataAnnotations\CheckableItemsAttribute.cs" />
+    <Compile Include="DataAnnotations\Column.cs" />
+    <Compile Include="DataAnnotations\ColumnsPropertyAttribute.cs" />
+    <Compile Include="DataAnnotations\CommentAttribute.cs" />
+    <Compile Include="DataAnnotations\ContentAttribute.cs" />
+    <Compile Include="DataAnnotations\ConverterAttribute.cs" />
+    <Compile Include="DataAnnotations\DefaultExtensionPropertyAttribute.cs" />
+    <Compile Include="DataAnnotations\DescriptionAttribute.cs" />
+    <Compile Include="DataAnnotations\DirectoryPathAttribute.cs" />
+    <Compile Include="DataAnnotations\DisplayMemberPathAttribute.cs" />
+    <Compile Include="DataAnnotations\DisplayNameAttribute.cs" />
+    <Compile Include="DataAnnotations\EasyInsertAttribute.cs" />
+    <Compile Include="DataAnnotations\EditableAttribute.cs" />
+    <Compile Include="DataAnnotations\EnableByAttribute.cs" />
+    <Compile Include="DataAnnotations\EnableByRadioButtonAttribute.cs" />
+    <Compile Include="DataAnnotations\FillTabAttribute.cs" />
+    <Compile Include="DataAnnotations\FilterPropertyAttribute.cs" />
+    <Compile Include="DataAnnotations\FontAttribute.cs" />
+    <Compile Include="DataAnnotations\FontFamilySelectorAttribute.cs" />
+    <Compile Include="DataAnnotations\FontPreviewAttribute.cs" />
+    <Compile Include="DataAnnotations\FormatStringAttribute.cs" />
+    <Compile Include="DataAnnotations\HeaderPlacement.cs" />
+    <Compile Include="DataAnnotations\HeaderPlacementAttribute.cs" />
+    <Compile Include="DataAnnotations\HeightAttribute.cs" />
+    <Compile Include="DataAnnotations\HorizontalAlignment.cs" />
+    <Compile Include="DataAnnotations\HorizontalAlignmentAttribute.cs" />
+    <Compile Include="DataAnnotations\IndentationLevelAttribute.cs" />
+    <Compile Include="DataAnnotations\InputDirection.cs" />
+    <Compile Include="DataAnnotations\InputDirectionAttribute.cs" />
+    <Compile Include="DataAnnotations\InputFilePathAttribute.cs" />
+    <Compile Include="DataAnnotations\ItemHeaderPropertyAttribute.cs" />
+    <Compile Include="DataAnnotations\ItemsSourcePropertyAttribute.cs" />
+    <Compile Include="DataAnnotations\ListAttribute.cs" />
+    <Compile Include="DataAnnotations\ListItemItemsSourcePropertyAttribute.cs" />
+    <Compile Include="DataAnnotations\OptionalAttribute.cs" />
+    <Compile Include="DataAnnotations\OutputFilePathAttribute.cs" />
+    <Compile Include="DataAnnotations\ReadOnlyAttribute.cs" />
+    <Compile Include="DataAnnotations\ResettableAttribute.cs" />
+    <Compile Include="DataAnnotations\SelectedValuePathAttribute.cs" />
+    <Compile Include="DataAnnotations\SelectorStyle.cs" />
+    <Compile Include="DataAnnotations\SelectorStyleAttribute.cs" />
+    <Compile Include="DataAnnotations\SlidableAttribute.cs" />
+    <Compile Include="DataAnnotations\SortIndexAttribute.cs" />
+    <Compile Include="DataAnnotations\SpinnableAttribute.cs" />
+    <Compile Include="DataAnnotations\VisibleByAttribute.cs" />
+    <Compile Include="DataAnnotations\WidePropertyAttribute.cs" />
+    <Compile Include="DataAnnotations\WidthAttribute.cs" />
+    <Compile Include="DataGrid\CellDefinitions\CellDefinition.cs" />
+    <Compile Include="DataGrid\CellDefinitions\CellDefinitionFactory.cs" />
+    <Compile Include="DataGrid\CellDefinitions\CellDescriptor.cs" />
+    <Compile Include="DataGrid\CellDefinitions\CheckCellDefinition.cs" />
+    <Compile Include="DataGrid\CellDefinitions\ColorCellDefinition.cs" />
+    <Compile Include="DataGrid\CellDefinitions\SelectorCellDefinition.cs" />
+    <Compile Include="DataGrid\CellDefinitions\TemplateCellDefinition.cs" />
+    <Compile Include="DataGrid\CellDefinitions\TextCellDefinition.cs" />
+    <Compile Include="DataGrid\CellRange.cs" />
+    <Compile Include="DataGrid\CellRef.cs" />
+    <Compile Include="DataGrid\CellRefConverter.cs" />
+    <Compile Include="DataGrid\ControlFactories\DataGridControlFactory.cs" />
+    <Compile Include="DataGrid\DataGrid.cs" />
+    <Compile Include="DataGrid\DataGridCommands.cs" />
+    <Compile Include="DataGrid\Definitions\ColumnDefinition.cs" />
+    <Compile Include="DataGrid\Definitions\PropertyDefinition.cs" />
+    <Compile Include="DataGrid\Definitions\RowDefinition.cs" />
+    <Compile Include="DataGrid\Definitions\TemplateColumnDefinition.cs" />
+    <Compile Include="DataGrid\ICellDefinitionFactory.cs" />
+    <Compile Include="DataGrid\IDataGridControlFactory.cs" />
+    <Compile Include="DataGrid\IDataGridOperator.cs" />
+    <Compile Include="DataGrid\Operators\DataGridOperator.cs" />
+    <Compile Include="DataGrid\Operators\ListListOperator.cs" />
+    <Compile Include="DataGrid\Operators\ListOperator.cs" />
+    <Compile Include="DataGrid\Operators\WrapItemsOperator.cs" />
+    <Compile Include="DataGrid\VisibilityConverter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="DataGrid\DataGrid.md" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DataGrid\Cursors\AutoFill.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DataGrid\Cursors\Cross.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DataGrid\Cursors\DownArrow.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DataGrid\Cursors\RightArrow.cur" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
